@@ -7,13 +7,28 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import registerServiceWorker from './registerServiceWorker';
 
-const fakeReducer = (state = '', action) => {
+const formReducer = (state = [], action) => {
+    //store info from feeling
+    if (action.type === 'ADD_FEELING') {
+        return [action.payload]
+    }
+    if (action.type === 'ADD_UNDERSTANDING') {
+        return [...state, action.payload]
+    }
+    if (action.type === 'ADD_SUPPORTED') {
+        return [...state, action.payload]
+    }
+
+    if (action.type === 'ADD_COMMENTS') {
+        return [...state, action.payload]
+    }
+    
     return state;
 }
 
 const store = createStore(
     combineReducers({
-        fakeReducer
+        formReducer
     }),
     applyMiddleware(logger)
 )
