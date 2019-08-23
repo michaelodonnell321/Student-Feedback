@@ -8,7 +8,8 @@ import logger from 'redux-logger';
 import registerServiceWorker from './registerServiceWorker';
 
 const formReducer = (state = [], action) => {
-    //store info from feeling
+    //store info from all different questions, use spread to put them all in state
+    //to send to review page
     if (action.type === 'ADD_FEELING') {
         return [action.payload]
     }
@@ -18,11 +19,10 @@ const formReducer = (state = [], action) => {
     if (action.type === 'ADD_SUPPORTED') {
         return [...state, action.payload]
     }
-
     if (action.type === 'ADD_COMMENTS') {
         return [...state, action.payload]
     }
-    
+
     return state;
 }
 

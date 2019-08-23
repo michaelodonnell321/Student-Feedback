@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
-    state={
+    state = {
         comments: ''
     }
 
@@ -14,15 +14,15 @@ class Comments extends Component {
     }
 
     handleClick = () => {
-        //dispatch to redux
+        //dispatch on click to send to redux
         this.props.dispatch({
             type: 'ADD_COMMENTS',
             payload: this.state.comments
         })
-        //move to the next page (review)
+        //move me to the next page (review)
         this.props.history.push('/review')
     }
-    
+
     render() {
         return (
             <div>
