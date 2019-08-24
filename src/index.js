@@ -22,6 +22,9 @@ const formReducer = (state = [], action) => {
     if (action.type === 'ADD_COMMENTS') {
         return [...state, action.payload]
     }
+    if (action.type === 'CLEAR_REVIEW') {
+        return []
+    }
 
     return state;
 }

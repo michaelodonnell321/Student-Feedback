@@ -18,7 +18,7 @@ class Review extends Component {
             this.props.dispatch({
                 type: 'CLEAR_REVIEW'
             });
-            this.props.history.push('/');
+            this.props.history.push('/success');
         })
         .catch(error => {
             console.log('error in PUT ', error);
