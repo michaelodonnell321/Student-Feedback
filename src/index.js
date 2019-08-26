@@ -29,9 +29,19 @@ const formReducer = (state = [], action) => {
     return state;
 }
 
+const feedbackReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_ADMIN':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
 const store = createStore(
     combineReducers({
-        formReducer
+        formReducer,
+        feedbackReducer
     }),
     applyMiddleware(logger)
 )
