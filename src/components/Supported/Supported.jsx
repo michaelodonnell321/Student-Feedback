@@ -32,6 +32,10 @@ class Supported extends Component {
         this.props.history.push('/comments')
     }
 
+    backClick = () => {
+        this.props.history.push('/understand')
+    }
+
     render() {
         return (
             <div>
@@ -40,6 +44,7 @@ class Supported extends Component {
                 <p>Support?</p>
                 <input type="number" onChange ={this.handleChange} placeholder="1 is bad, 5 is great!" />
                 <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.backClick}>Back</button>
             </div>
         );
     }

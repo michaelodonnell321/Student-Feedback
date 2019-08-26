@@ -32,6 +32,11 @@ class Understand extends Component {
         this.props.history.push('/supported')
     }
 
+    backClick = () => {
+        //goes back to step before on click of back button
+        this.props.history.push('/')
+    }
+
     render() {
         console.log(this.state.understanding);
         return (
@@ -41,6 +46,7 @@ class Understand extends Component {
                 <p>Understanding?</p>
                 <input type="number" onChange ={this.handleChange} placeholder="1 is bad, 5 is great!" />
                 <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.backClick}>Back</button>
             </div>
         );
     }

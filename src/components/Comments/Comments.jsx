@@ -23,6 +23,10 @@ class Comments extends Component {
         this.props.history.push('/review')
     }
 
+    backClick = () => {
+        this.props.history.push('/supported')
+    }
+
     render() {
         return (
             <div>
@@ -31,6 +35,7 @@ class Comments extends Component {
                 <p>Comments</p>
                 <input onChange={this.handleChange} placeholder="comments" />
                 <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.backClick}>Back</button>
             </div>
         );
     }

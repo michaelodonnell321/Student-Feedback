@@ -25,6 +25,10 @@ class Review extends Component {
         });
     };
 
+    backClick = () => {
+        this.props.history.push('/comments')
+    }
+
     render() {
         return (
             <div>
@@ -35,6 +39,7 @@ class Review extends Component {
                 <h3>Support: {this.props.feedback[2]}</h3>
                 <h3>Comments: {this.props.feedback[3]}</h3>
                 <button onClick={this.clickHandler}>Submit</button>
+                <button onClick={this.backClick}>Back</button>
             </div>
         );
     }
